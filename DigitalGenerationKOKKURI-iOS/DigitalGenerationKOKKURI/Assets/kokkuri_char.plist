@@ -648,5 +648,18 @@
         <key>height</key>
         <integer>85</integer>
     </dict>
+    
+    <key>T</key>
+    <dict>
+        <key>x</key>
+        <integer>430</integer>
+        <key>y</key>
+        <integer>38</integer>
+        <key>width</key>
+        <integer>162</integer>
+        <key>height</key>
+        <integer>127</integer>
+    </dict>
+    
 </dict>
 </plist>
