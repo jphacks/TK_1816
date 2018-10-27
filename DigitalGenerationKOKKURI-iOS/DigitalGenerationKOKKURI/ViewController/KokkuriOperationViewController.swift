@@ -12,6 +12,14 @@ import RxSwift
 import RxCocoa
 
 class KokkuriOperationViewController: UIViewController {
+    
+    private var kokkuriOperationView: KokkuriOperationView {
+        return self.view as! KokkuriOperationView
+    }
+    
+    override func loadView() {
+        self.view = KokkuriOperationView()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

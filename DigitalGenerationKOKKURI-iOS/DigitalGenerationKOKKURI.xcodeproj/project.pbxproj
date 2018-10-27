@@ -113,10 +113,10 @@
 		EA6048E52183F38F001EB50B /* DigitalGenerationKOKKURI */ = {
 			isa = PBXGroup;
 			children = (
+				EA6048E62183F38F001EB50B /* AppDelegate.swift */,
 				EA524DEE2183F8D6002AAB9E /* View */,
 				EA524DEB2183F874002AAB9E /* ViewController */,
 				EA524DE52183F85D002AAB9E /* Assets */,
-				EA6048E62183F38F001EB50B /* AppDelegate.swift */,
 				EA6048EF2183F391001EB50B /* LaunchScreen.storyboard */,
 				EA6048F22183F391001EB50B /* Info.plist */,
 			);
