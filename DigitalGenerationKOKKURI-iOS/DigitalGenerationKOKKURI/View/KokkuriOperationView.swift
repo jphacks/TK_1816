@@ -26,6 +26,10 @@ final class KokkuriOperationView: UIView {
         return filedPanSubject.asObserver()
     }
     
+    public var toriiTap: Observable<Void> {
+        return toriiButton.rx.tap.asObservable()
+    }
+    
     init() {
         let kokkuriFieldImage = UIImage(named: "field")
         let kokkuriGridImage = UIImage(named: "grid")
@@ -71,11 +75,6 @@ final class KokkuriOperationView: UIView {
     }
     
     private func bindRx() {
-        toriiButton.rx.tap
-            .subscribe(onNext: { _ in
-                print("single fefefe")
-            }).disposed(by: disposeBag)
-        
         toriiButton.rx.tap
             .debouncedBuffer(0.25, scheduler: MainScheduler.instance)
             .filter{ $0.count == 2}

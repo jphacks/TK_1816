@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - BottomPopup (0.3.1)
   - Kingfisher (4.10.0)
   - Realm (3.10.0):
     - Realm/Headers (= 3.10.0)
@@ -28,6 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BottomPopup
   - Kingfisher
   - RealmSwift
   - RxAlamofire
@@ -44,6 +46,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - BottomPopup
     - Kingfisher
     - Realm
     - RealmSwift
@@ -60,6 +63,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  BottomPopup: 1031c8937466ca350d68e293f1d8e463e758e150
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   Realm: 85ab9e4f779d66f6e9ffeb118dc25b7f130c96ac
   RealmSwift: 69121c8b86d0ae005fb779efdb10e606732e1c74
@@ -74,6 +78,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: 1e2c8e5489475d0ea5adf60be7e3498dfd6db428
+PODFILE CHECKSUM: e945102c026999d7351d5a1519fbb68f0098e7e1
 
 COCOAPODS: 1.5.3

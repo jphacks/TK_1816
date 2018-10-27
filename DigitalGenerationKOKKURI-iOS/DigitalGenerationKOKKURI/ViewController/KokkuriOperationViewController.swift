@@ -36,5 +36,13 @@ class KokkuriOperationViewController: UIViewController {
             .subscribe(onNext: { (point: CGPoint) in
                 KokkuriFieldOSCManager.sendPosition(point)
             }).disposed(by: disposeBag)
+        
+        kokkuriOperationView.toriiTap
+            .subscribe(onNext: { [weak self] _ in
+                guard let `self` = self else { return }
+                
+                let vc = SettingViewController()
+                self.present(vc, animated: true, completion: nil)
+            }).disposed(by: disposeBag)
     }
 }

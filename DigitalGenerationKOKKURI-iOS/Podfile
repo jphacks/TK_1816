@@ -23,6 +23,8 @@ target 'DigitalGenerationKOKKURI' do
   pod 'RxAlamofire'
   pod 'RxGesture'
 
+  # UI
   pod 'SVProgressHUD'
+  pod 'BottomPopup'
 
 end

@@ -15,8 +15,12 @@
 		EA524DF421840CA8002AAB9E /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA524DF321840CA8002AAB9E /* ObservableType.swift */; };
 		EA524DF721841370002AAB9E /* OSCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA524DF621841370002AAB9E /* OSCManager.swift */; };
 		EA524DF9218415F7002AAB9E /* KokkuriFieldOSCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA524DF8218415F7002AAB9E /* KokkuriFieldOSCManager.swift */; };
+		EA56F8A1218439B700050300 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA56F8A0218439B700050300 /* SettingView.swift */; };
 		EA6048E72183F38F001EB50B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6048E62183F38F001EB50B /* AppDelegate.swift */; };
 		EA6048F12183F391001EB50B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6048EF2183F391001EB50B /* LaunchScreen.storyboard */; };
+		EA76463021843E25006A5C75 /* CGRect+Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76462F21843E25006A5C75 /* CGRect+Point.swift */; };
+		EA76463221843E2B006A5C75 /* CGPoint+operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76463121843E2B006A5C75 /* CGPoint+operator.swift */; };
+		EAF177AB21842B3D004DB97C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF177AA21842B3D004DB97C /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +34,14 @@
 		EA524DF321840CA8002AAB9E /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		EA524DF621841370002AAB9E /* OSCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCManager.swift; sourceTree = "<group>"; };
 		EA524DF8218415F7002AAB9E /* KokkuriFieldOSCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokkuriFieldOSCManager.swift; sourceTree = "<group>"; };
+		EA56F8A0218439B700050300 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		EA6048E32183F38F001EB50B /* DigitalGenerationKOKKURI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalGenerationKOKKURI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6048E62183F38F001EB50B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6048F02183F391001EB50B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA6048F22183F391001EB50B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA76462F21843E25006A5C75 /* CGRect+Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Point.swift"; sourceTree = "<group>"; };
+		EA76463121843E2B006A5C75 /* CGPoint+operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+operator.swift"; sourceTree = "<group>"; };
+		EAF177AA21842B3D004DB97C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				EA524DEC2183F874002AAB9E /* KokkuriOperationViewController.swift */,
+				EAF177AA21842B3D004DB97C /* SettingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -94,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				EA524DEF2183F8E4002AAB9E /* KokkuriOperationView.swift */,
+				EA56F8A0218439B700050300 /* SettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -101,6 +111,8 @@
 		EA524DF221840C8B002AAB9E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				EA76463121843E2B006A5C75 /* CGPoint+operator.swift */,
+				EA76462F21843E25006A5C75 /* CGRect+Point.swift */,
 				EA524DF321840CA8002AAB9E /* ObservableType.swift */,
 			);
 			path = Category;
@@ -249,6 +261,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DigitalGenerationKOKKURI/Pods-DigitalGenerationKOKKURI-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BottomPopup/BottomPopup.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -268,6 +281,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BottomPopup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -296,10 +310,14 @@
 			files = (
 				EA524DF12183F962002AAB9E /* KokkuriOperationView.swift in Sources */,
 				EA524DED2183F874002AAB9E /* KokkuriOperationViewController.swift in Sources */,
+				EAF177AB21842B3D004DB97C /* SettingViewController.swift in Sources */,
 				EA524DF421840CA8002AAB9E /* ObservableType.swift in Sources */,
 				EA524DF9218415F7002AAB9E /* KokkuriFieldOSCManager.swift in Sources */,
+				EA56F8A1218439B700050300 /* SettingView.swift in Sources */,
 				EA524DF721841370002AAB9E /* OSCManager.swift in Sources */,
 				EA6048E72183F38F001EB50B /* AppDelegate.swift in Sources */,
+				EA76463221843E2B006A5C75 /* CGPoint+operator.swift in Sources */,
+				EA76463021843E25006A5C75 /* CGRect+Point.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
