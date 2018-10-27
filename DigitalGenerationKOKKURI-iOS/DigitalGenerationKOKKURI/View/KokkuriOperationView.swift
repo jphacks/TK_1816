@@ -21,6 +21,11 @@ final class KokkuriOperationView: UIView {
     
     private var disposeBag: DisposeBag
     
+    private let filedPanSubject: PublishSubject<CGPoint> = PublishSubject<CGPoint>()
+    public var fieldPan: Observable<CGPoint> {
+        return filedPanSubject.asObserver()
+    }
+    
     init() {
         let kokkuriFieldImage = UIImage(named: "field")
         let kokkuriGridImage = UIImage(named: "grid")
@@ -85,6 +90,7 @@ final class KokkuriOperationView: UIView {
                 
                 let tapPoint = recognizer.location(in: self.fieldImageView)
                 self.updateDebugLabel(tapPoint: tapPoint)
+                self.filedPanSubject.onNext(tapPoint)
             }).disposed(by: disposeBag)
     }
     

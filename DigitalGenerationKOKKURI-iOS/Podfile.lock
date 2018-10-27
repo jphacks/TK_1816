@@ -22,6 +22,7 @@ PODS:
   - RxSwift (4.3.1)
   - SVProgressHUD (2.2.5)
   - SwiftDate (5.0.9)
+  - SwiftOSC (1.2.2)
   - SwiftyJSON (4.1.0)
   - SwiftyUserDefaults (3.0.1)
 
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - RxSwift
   - SVProgressHUD
   - SwiftDate
+  - SwiftOSC
   - SwiftyJSON
   - SwiftyUserDefaults
 
@@ -52,6 +54,7 @@ SPEC REPOS:
     - RxSwift
     - SVProgressHUD
     - SwiftDate
+    - SwiftOSC
     - SwiftyJSON
     - SwiftyUserDefaults
 
@@ -67,9 +70,10 @@ SPEC CHECKSUMS:
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftDate: 52b718d32ec006861a2be2756cbfa482d438e781
+  SwiftOSC: d5750d724e7a348afa64ea2cafa00b3105ec0a76
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: adee8e9a578ff1c44d75d47a36e35dd4f7eb7b92
+PODFILE CHECKSUM: 1e2c8e5489475d0ea5adf60be7e3498dfd6db428
 
 COCOAPODS: 1.5.3

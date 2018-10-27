@@ -11,7 +11,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+import SwiftOSC
+
 class KokkuriOperationViewController: UIViewController {
+    
+    lazy var disposeBag: DisposeBag = DisposeBag()
     
     private var kokkuriOperationView: KokkuriOperationView {
         return self.view as! KokkuriOperationView
@@ -23,9 +27,14 @@ class KokkuriOperationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bindRx()
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+    private func bindRx() {
+        kokkuriOperationView.fieldPan
+            .subscribe(onNext: { (point: CGPoint) in
+                <#code#>
+            }).disposed(by: disposeBag)
     }
 }
