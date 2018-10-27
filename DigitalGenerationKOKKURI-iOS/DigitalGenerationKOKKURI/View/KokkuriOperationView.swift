@@ -45,7 +45,7 @@ final class KokkuriOperationView: UIView {
         debugLabel.text = "x: 150\n y: 111"
         debugLabel.numberOfLines = 0
         debugLabel.textAlignment = .left
-        debugLabel.isHidden = true
+//        debugLabel.isHidden = true
         
         backgroundColor = UIColor.white
         
@@ -89,10 +89,11 @@ final class KokkuriOperationView: UIView {
                 guard let `self` = self else { return }
                 
                 let tapPoint = recognizer.location(in: self.fieldImageView)
+                self.updateDebugLabel(tapPoint: tapPoint)
+                
                 let resizedPoint = CGPoint(x: tapPoint.x / self.fieldImageView.frame.width,
                                            y: tapPoint.y / self.fieldImageView.frame.height)
                 
-                self.updateDebugLabel(tapPoint: resizedPoint)
                 self.filedPanSubject.onNext(resizedPoint)
             }).disposed(by: disposeBag)
     }
@@ -102,6 +103,6 @@ final class KokkuriOperationView: UIView {
     }
     
     private func updateDebugLabel(tapPoint: CGPoint) {
-        debugLabel.text = "x: \(tapPoint.x)\n y: \(tapPoint.y)"
+        debugLabel.text = " x: \(tapPoint.x)\n y: \(tapPoint.y) \n \(KokkuriCharManager.charByPoint(tapPoint)?.char) "
     }
 }
