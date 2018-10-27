@@ -14,6 +14,7 @@ extension DefaultsKeys {
     static let oscIp = DefaultsKey<String?>("ip")
     static let oscPort = DefaultsKey<Int>("oscPort")
     static let oscInterval = DefaultsKey<Double>("oscInterval")
+    static let oscCharInterval = DefaultsKey<Double>("oscCharInterval")
 }
 
 @UIApplicationMain

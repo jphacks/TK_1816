@@ -38,6 +38,7 @@ final class SettingViewController: BottomPopupViewController {
         settingView.setIpTextField(text: Defaults[.oscIp] ?? "localhost")
         settingView.setPortTextField(num: Defaults[.oscPort])
         settingView.setInterval(Defaults[.oscInterval])
+        settingView.setCharInterval(Defaults[.oscCharInterval])
         
         bindRx()
     }
@@ -61,6 +62,11 @@ final class SettingViewController: BottomPopupViewController {
                 if let kokkuriOperateVC = self.presentingViewController as? KokkuriOperationViewController {
                     kokkuriOperateVC.bindFieldPan()
                 }
+            }).disposed(by: disposeBag)
+        
+        settingView.charIntervalTextFieldEdit
+            .subscribe(onNext: { interval in
+                Defaults[.oscCharInterval] = interval
             }).disposed(by: disposeBag)
     }
 }

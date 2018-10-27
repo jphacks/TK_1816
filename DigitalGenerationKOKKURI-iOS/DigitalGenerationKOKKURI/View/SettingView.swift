@@ -22,6 +22,14 @@ final class SettingView: UIView {
     private let intervalLabel: UILabel = UILabel()
     private let intervalTextField: UITextField = UITextField()
     
+    private let sendTextsLabel: UILabel = UILabel()
+    private let sendTextsTextField: UITextField = UITextField()
+    
+    private let charIntervalLabel: UILabel = UILabel()
+    private let charIntervalTextField: UITextField = UITextField()
+    
+    private let sendButton: UIButton = UIButton()
+    
     lazy var disposeBag: DisposeBag = DisposeBag()
     
     public var ipTextFieldEdit: Observable<String> {
@@ -58,6 +66,19 @@ final class SettingView: UIView {
                 return num!
             })
     }
+    
+    public var charIntervalTextFieldEdit: Observable<Double> {
+        return charIntervalTextField.rx.text
+            .map({ (text) -> Double? in
+                return Double(text ?? "")
+            })
+            .filter({ num -> Bool in
+                return num != nil
+            })
+            .map({ num -> Double in
+                return num!
+            })
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,39 +92,53 @@ final class SettingView: UIView {
         intervalLabel.text = "interval"
         intervalLabel.font = UIFont.boldSystemFont(ofSize: 18)
         
+        sendTextsLabel.text = "Send Message"
+        sendTextsLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        
+        charIntervalLabel.text = "Send Char Interval"
+        charIntervalLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        
         ipTextField.keyboardType = .numberPad
-//        ipTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
-//        ipTextField.layer.borderWidth = 1.2
-//        ipTextField.layer.cornerRadius = 6
-//        ipTextField.layer.masksToBounds = true
         ipTextField.delegate = self
         ipTextField.borderStyle = .roundedRect
         
         portTextField.keyboardType = .numberPad
-//        portTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
-//        portTextField.layer.borderWidth = 1.2
-//        portTextField.layer.cornerRadius = 6
-//        portTextField.layer.masksToBounds = true
         portTextField.delegate = self
         portTextField.borderStyle = .roundedRect
         
         intervalTextField.keyboardType = .numberPad
-//        intervalTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
-//        intervalTextField.layer.borderWidth = 1.2
-//        intervalTextField.layer.cornerRadius = 6
-//        intervalTextField.layer.masksToBounds = true
         intervalTextField.delegate = self
         intervalTextField.borderStyle = .roundedRect
+        
+        sendTextsTextField.keyboardType = .alphabet
+        sendTextsTextField.delegate = self
+        sendTextsTextField.borderStyle = .roundedRect
+        
+        charIntervalTextField.keyboardType = .numberPad
+        charIntervalTextField.delegate = self
+        charIntervalTextField.borderStyle = .roundedRect
+        
+        sendButton.layer.masksToBounds = true
+        sendButton.layer.cornerRadius = 7
+        sendButton.backgroundColor = UIColor(red:0.90, green:0.59, blue:0.29, alpha:1.00)
+        sendButton.setTitle("send", for: .normal)
 
         backgroundColor = UIColor.white
 
         addSubview(ipLabel)
         addSubview(portLabel)
         addSubview(intervalLabel)
+        addSubview(sendTextsLabel)
+        addSubview(charIntervalLabel)
+        
         addSubview(ipTextField)
         addSubview(portTextField)
         addSubview(intervalTextField)
+        addSubview(sendTextsTextField)
+        addSubview(charIntervalTextField)
         
+        addSubview(sendButton)
+
         bindRx()
     }
     
@@ -136,6 +171,25 @@ final class SettingView: UIView {
         intervalTextField.frame.size = CGSize(width: 200, height: 24)
         intervalTextField.frame.origin.x = intervalLabel.frame.endPoint.x + 7
         intervalTextField.center.y = intervalLabel.center.y
+        
+        sendTextsLabel.frame.origin = CGPoint(x: ipLabel.frame.origin.x, y: ipLabel.frame.endPoint.y + 40)
+        sendTextsLabel.sizeToFit()
+        
+        sendTextsTextField.frame.size = CGSize(width: frame.width - 250, height: 24)
+        sendTextsTextField.frame.origin.x = sendTextsLabel.frame.endPoint.x + 7
+        sendTextsTextField.center.y = sendTextsLabel.center.y
+        
+        sendButton.frame.size = CGSize(width: 80, height: 36)
+        sendButton.frame.endPoint.x = sendTextsTextField.frame.endPoint.x
+        sendButton.frame.origin.y = sendTextsTextField.frame.endPoint.y + 20
+        
+        charIntervalTextField.frame.size = CGSize(width: 100, height: 24)
+        charIntervalTextField.center.y = sendButton.center.y
+        charIntervalTextField.frame.endPoint.x = sendButton.frame.origin.x - 16
+        
+        charIntervalLabel.sizeToFit()
+        charIntervalLabel.center.y = charIntervalTextField.center.y
+        charIntervalLabel.frame.endPoint.x = charIntervalTextField.frame.origin.x - 16
     }
     
     private func bindRx() {
@@ -164,6 +218,10 @@ final class SettingView: UIView {
     
     public func setInterval(_ interval: Double) {
         self.intervalTextField.text = interval.description
+    }
+    
+    public func setCharInterval(_ interval: Double) {
+        self.charIntervalTextField.text = interval.description
     }
 }
 

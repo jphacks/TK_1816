@@ -45,7 +45,7 @@ final class KokkuriOperationView: UIView {
         debugLabel.text = "x: 150\n y: 111"
         debugLabel.numberOfLines = 0
         debugLabel.textAlignment = .left
-//        debugLabel.isHidden = true
+        debugLabel.isHidden = true
         
         backgroundColor = UIColor.white
         
@@ -54,13 +54,14 @@ final class KokkuriOperationView: UIView {
         addSubview(toriiButton)
         addSubview(debugLabel)
         
-        KokkuriCharManager.shared.allChars.forEach { (char) in
-            let view = UIView()
-            view.frame = char.rect
-            view.layer.borderColor = UIColor.blue.cgColor
-            view.layer.borderWidth = 1
-            addSubview(view)
-        }
+        // 当たり判定表示
+//        KokkuriCharManager.shared.allChars.forEach { (char) in
+//            let view = UIView()
+//            view.frame = char.rect
+//            view.layer.borderColor = UIColor.blue.cgColor
+//            view.layer.borderWidth = 1
+//            addSubview(view)
+//        }
         
         bindRx()
     }
