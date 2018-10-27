@@ -15,17 +15,26 @@ final class KokkuriOperationView: UIView {
     
     private let fieldImageView: UIImageView
     private let gridImageView: UIImageView
+    private let toriiButton: UIButton
     
     init() {
-        self.fieldImageView = UIImageView()
-        self.gridImageView = UIImageView()
+        let kokkuriFieldImage = UIImage(named: "field")
+        let kokkuriGridImage = UIImage(named: "grid")
+        
+        self.fieldImageView = UIImageView(image: kokkuriFieldImage)
+        self.gridImageView = UIImageView(image: kokkuriGridImage)
+        self.toriiButton = UIButton()
         
         super.init(frame: CGRect.zero)
         
-        gridImageView.backgroundColor = UIColor.green
+        toriiButton.layer.borderColor = UIColor.red.cgColor
+        toriiButton.layer.borderWidth = 1.2
         
+        backgroundColor = UIColor.white
+        
+        // addSubview(gridImageView)
         addSubview(fieldImageView)
-        addSubview(gridImageView)
+        addSubview(toriiButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,5 +46,9 @@ final class KokkuriOperationView: UIView {
         
         fieldImageView.frame.size = frame.size
         gridImageView.frame.size = frame.size
+        
+        toriiButton.frame.size = CGSize(width: 160, height: 150)
+        toriiButton.frame.origin.y = 30
+        toriiButton.center.x = frame.width / 2
     }
 }
