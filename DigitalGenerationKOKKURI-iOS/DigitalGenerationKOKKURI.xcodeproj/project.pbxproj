@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5358506FAE3C269CDB52C0E2 /* Pods_DigitalGenerationKOKKURI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93ECC23383634524CD4BE34 /* Pods_DigitalGenerationKOKKURI.framework */; };
+		EA524DE92183F85D002AAB9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA524DE62183F85D002AAB9E /* Assets.xcassets */; };
+		EA524DEA2183F85D002AAB9E /* grid.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EA524DE82183F85D002AAB9E /* grid.pdf */; };
+		EA524DED2183F874002AAB9E /* KokkuriOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA524DEC2183F874002AAB9E /* KokkuriOperationViewController.swift */; };
+		EA524DF12183F962002AAB9E /* KokkuriOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA524DEF2183F8E4002AAB9E /* KokkuriOperationView.swift */; };
 		EA6048E72183F38F001EB50B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6048E62183F38F001EB50B /* AppDelegate.swift */; };
-		EA6048E92183F38F001EB50B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6048E82183F38F001EB50B /* ViewController.swift */; };
-		EA6048EC2183F38F001EB50B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6048EA2183F38F001EB50B /* Main.storyboard */; };
-		EA6048EE2183F391001EB50B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6048ED2183F391001EB50B /* Assets.xcassets */; };
 		EA6048F12183F391001EB50B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6048EF2183F391001EB50B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -19,11 +20,12 @@
 		3D027C1926A7228A8B8447D5 /* Pods-DigitalGenerationKOKKURI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalGenerationKOKKURI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigitalGenerationKOKKURI/Pods-DigitalGenerationKOKKURI.debug.xcconfig"; sourceTree = "<group>"; };
 		51A53790402DD2483D5ACF8D /* Pods-DigitalGenerationKOKKURI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalGenerationKOKKURI.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigitalGenerationKOKKURI/Pods-DigitalGenerationKOKKURI.release.xcconfig"; sourceTree = "<group>"; };
 		A93ECC23383634524CD4BE34 /* Pods_DigitalGenerationKOKKURI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalGenerationKOKKURI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA524DE62183F85D002AAB9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA524DE82183F85D002AAB9E /* grid.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = grid.pdf; sourceTree = "<group>"; };
+		EA524DEC2183F874002AAB9E /* KokkuriOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KokkuriOperationViewController.swift; sourceTree = "<group>"; };
+		EA524DEF2183F8E4002AAB9E /* KokkuriOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokkuriOperationView.swift; sourceTree = "<group>"; };
 		EA6048E32183F38F001EB50B /* DigitalGenerationKOKKURI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalGenerationKOKKURI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6048E62183F38F001EB50B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA6048E82183F38F001EB50B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EA6048EB2183F38F001EB50B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EA6048ED2183F391001EB50B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA6048F02183F391001EB50B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA6048F22183F391001EB50B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +59,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EA524DE52183F85D002AAB9E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EA524DE62183F85D002AAB9E /* Assets.xcassets */,
+				EA524DE72183F85D002AAB9E /* pdf */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EA524DE72183F85D002AAB9E /* pdf */ = {
+			isa = PBXGroup;
+			children = (
+				EA524DE82183F85D002AAB9E /* grid.pdf */,
+			);
+			path = pdf;
+			sourceTree = "<group>";
+		};
+		EA524DEB2183F874002AAB9E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EA524DEC2183F874002AAB9E /* KokkuriOperationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EA524DEE2183F8D6002AAB9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA524DEF2183F8E4002AAB9E /* KokkuriOperationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EA6048DA2183F38F001EB50B = {
 			isa = PBXGroup;
 			children = (
@@ -78,10 +113,10 @@
 		EA6048E52183F38F001EB50B /* DigitalGenerationKOKKURI */ = {
 			isa = PBXGroup;
 			children = (
+				EA524DEE2183F8D6002AAB9E /* View */,
+				EA524DEB2183F874002AAB9E /* ViewController */,
+				EA524DE52183F85D002AAB9E /* Assets */,
 				EA6048E62183F38F001EB50B /* AppDelegate.swift */,
-				EA6048E82183F38F001EB50B /* ViewController.swift */,
-				EA6048EA2183F38F001EB50B /* Main.storyboard */,
-				EA6048ED2183F391001EB50B /* Assets.xcassets */,
 				EA6048EF2183F391001EB50B /* LaunchScreen.storyboard */,
 				EA6048F22183F391001EB50B /* Info.plist */,
 			);
@@ -149,8 +184,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA6048F12183F391001EB50B /* LaunchScreen.storyboard in Resources */,
-				EA6048EE2183F391001EB50B /* Assets.xcassets in Resources */,
-				EA6048EC2183F38F001EB50B /* Main.storyboard in Resources */,
+				EA524DE92183F85D002AAB9E /* Assets.xcassets in Resources */,
+				EA524DEA2183F85D002AAB9E /* grid.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA6048E92183F38F001EB50B /* ViewController.swift in Sources */,
+				EA524DF12183F962002AAB9E /* KokkuriOperationView.swift in Sources */,
+				EA524DED2183F874002AAB9E /* KokkuriOperationViewController.swift in Sources */,
 				EA6048E72183F38F001EB50B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,14 +276,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EA6048EA2183F38F001EB50B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA6048EB2183F38F001EB50B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EA6048EF2183F391001EB50B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
