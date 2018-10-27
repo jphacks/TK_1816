@@ -7,6 +7,7 @@
 //
 
 import SwiftOSC
+import SwiftyUserDefaults
 
 extension OSCManager: OSCServerDelegate {
     public static let shared = OSCManager()
@@ -17,12 +18,20 @@ class OSCManager: NSObject {
     private let client: OSCClient
     
     private override init() {
-        client = OSCClient(address: "192.168.179.6", port: 50000)
+        client = OSCClient(address: Defaults[.oscIp] ?? "localhost", port: Defaults[.oscPort])
         
         super.init()
     }
     
     public func send(_ message: OSCMessage) {
         self.client.send(message)
+    }
+    
+    public func setSendIp(_ ipStr: String) {
+        client.address = ipStr
+    }
+    
+    public func setSendPort(_ port: Int) {
+        client.port = port
     }
 }

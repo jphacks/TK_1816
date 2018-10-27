@@ -7,9 +7,16 @@
 //
 
 import UIKit
+
+import RxSwift
+import RxCocoa
+
+import SwiftyUserDefaults
 import BottomPopup
 
 final class SettingViewController: BottomPopupViewController {
+    
+    lazy var disposeBag: DisposeBag = DisposeBag()
     
     private var settingView: SettingView {
         return self.view as! SettingView
@@ -28,5 +35,24 @@ final class SettingViewController: BottomPopupViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        settingView.setIpTextField(text: Defaults[.oscIp] ?? "localhost")
+        settingView.setPortTextField(num: Defaults[.oscPort])
+        settingView.setInterval(Defaults[.oscDuration])
+        
+        bindRx()
+    }
+    
+    private func bindRx() {
+        settingView.ipTextFieldEdit
+            .subscribe(onNext: { ipStr in
+                Defaults[.oscIp] = ipStr
+                OSCManager.shared.setSendIp(ipStr)
+            }).disposed(by: disposeBag)
+        
+        settingView.portTextFieldEdit
+            .subscribe(onNext: { port in
+                Defaults[.oscPort] = port
+                OSCManager.shared.setSendPort(port)
+            }).disposed(by: disposeBag)
     }
 }

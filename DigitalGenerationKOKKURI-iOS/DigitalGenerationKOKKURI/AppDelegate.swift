@@ -8,6 +8,14 @@
 
 import UIKit
 
+import SwiftyUserDefaults
+
+extension DefaultsKeys {
+    static let oscIp = DefaultsKey<String?>("ip")
+    static let oscPort = DefaultsKey<Int>("oscPort")
+    static let oscDuration = DefaultsKey<Double>("oscDuration")
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

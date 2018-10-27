@@ -148,7 +148,7 @@
 		EA6048E52183F38F001EB50B /* DigitalGenerationKOKKURI */ = {
 			isa = PBXGroup;
 			children = (
-				EA524DF52184134D002AAB9E /* OSCManager */,
+				EA76463321844B63006A5C75 /* Manager */,
 				EA524DF221840C8B002AAB9E /* Category */,
 				EA6048E62183F38F001EB50B /* AppDelegate.swift */,
 				EA524DEE2183F8D6002AAB9E /* View */,
@@ -158,6 +158,14 @@
 				EA6048F22183F391001EB50B /* Info.plist */,
 			);
 			path = DigitalGenerationKOKKURI;
+			sourceTree = "<group>";
+		};
+		EA76463321844B63006A5C75 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				EA524DF52184134D002AAB9E /* OSCManager */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

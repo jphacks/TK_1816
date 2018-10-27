@@ -23,6 +23,41 @@ final class SettingView: UIView {
     private let intervalTextField: UITextField = UITextField()
     
     lazy var disposeBag: DisposeBag = DisposeBag()
+    
+    public var ipTextFieldEdit: Observable<String> {
+        return ipTextField.rx.text.filter({ (text) -> Bool in
+                return text != nil
+            })
+            .map({ (text) -> String in
+                return text!
+            }).asObservable()
+    }
+    
+    public var portTextFieldEdit: Observable<Int> {
+        return portTextField.rx.text
+            .map({ (text) -> Int? in
+                return Int(text ?? "")
+            })
+            .filter({ num -> Bool in
+                return num != nil
+            })
+            .map({ num -> Int in
+                return num!
+            })
+    }
+    
+    public var intervalTextFieldEdit: Observable<Double> {
+        return intervalTextField.rx.text
+            .map({ (text) -> Double? in
+                return Double(text ?? "")
+            })
+            .filter({ num -> Bool in
+                return num != nil
+            })
+            .map({ num -> Double in
+                return num!
+            })
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,7 +119,7 @@ final class SettingView: UIView {
         ipTextField.center.y = ipLabel.center.y
         
         portLabel.sizeToFit()
-        portLabel.frame.origin.x = ipTextField.frame.endPoint.x + 12
+        portLabel.frame.origin.x = ipTextField.frame.endPoint.x + 16
         portLabel.center.y = ipTextField.center.y
         
         portTextField.frame.size = CGSize(width: 200, height: 24)
@@ -92,7 +127,7 @@ final class SettingView: UIView {
         portTextField.center.y = portLabel.center.y
         
         intervalLabel.sizeToFit()
-        intervalLabel.frame.origin.x = portTextField.frame.endPoint.x + 12
+        intervalLabel.frame.origin.x = portTextField.frame.endPoint.x + 16
         intervalLabel.center.y = portTextField.center.y
         
         intervalTextField.frame.size = CGSize(width: 200, height: 24)
@@ -114,6 +149,18 @@ final class SettingView: UIView {
                 })
             }).disposed(by: disposeBag)
 
+    }
+    
+    public func setIpTextField(text: String) {
+        self.ipTextField.text = text
+    }
+    
+    public func setPortTextField(num: Int) {
+        self.portTextField.text = num.description
+    }
+    
+    public func setInterval(_ interval: Double) {
+        self.intervalTextField.text = interval.description
     }
 }
 
