@@ -89,8 +89,11 @@ final class KokkuriOperationView: UIView {
                 guard let `self` = self else { return }
                 
                 let tapPoint = recognizer.location(in: self.fieldImageView)
-                self.updateDebugLabel(tapPoint: tapPoint)
-                self.filedPanSubject.onNext(tapPoint)
+                let resizedPoint = CGPoint(x: tapPoint.x / self.fieldImageView.frame.width,
+                                           y: tapPoint.y / self.fieldImageView.frame.height)
+                
+                self.updateDebugLabel(tapPoint: resizedPoint)
+                self.filedPanSubject.onNext(resizedPoint)
             }).disposed(by: disposeBag)
     }
     
