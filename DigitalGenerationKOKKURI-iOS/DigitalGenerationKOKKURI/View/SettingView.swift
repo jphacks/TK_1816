@@ -72,25 +72,28 @@ final class SettingView: UIView {
         intervalLabel.font = UIFont.boldSystemFont(ofSize: 18)
         
         ipTextField.keyboardType = .numberPad
-        ipTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
-        ipTextField.layer.borderWidth = 1.2
-        ipTextField.layer.cornerRadius = 6
-        ipTextField.layer.masksToBounds = true
+//        ipTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
+//        ipTextField.layer.borderWidth = 1.2
+//        ipTextField.layer.cornerRadius = 6
+//        ipTextField.layer.masksToBounds = true
         ipTextField.delegate = self
+        ipTextField.borderStyle = .roundedRect
         
         portTextField.keyboardType = .numberPad
-        portTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
-        portTextField.layer.borderWidth = 1.2
-        portTextField.layer.cornerRadius = 6
-        portTextField.layer.masksToBounds = true
+//        portTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
+//        portTextField.layer.borderWidth = 1.2
+//        portTextField.layer.cornerRadius = 6
+//        portTextField.layer.masksToBounds = true
         portTextField.delegate = self
+        portTextField.borderStyle = .roundedRect
         
-        intervalTextField.keyboardType = .numbersAndPunctuation
-        intervalTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
-        intervalTextField.layer.borderWidth = 1.2
-        intervalTextField.layer.cornerRadius = 6
-        intervalTextField.layer.masksToBounds = true
+        intervalTextField.keyboardType = .numberPad
+//        intervalTextField.layer.borderColor = UIColor(red:0.42, green:0.42, blue:0.42, alpha:1.00).cgColor
+//        intervalTextField.layer.borderWidth = 1.2
+//        intervalTextField.layer.cornerRadius = 6
+//        intervalTextField.layer.masksToBounds = true
         intervalTextField.delegate = self
+        intervalTextField.borderStyle = .roundedRect
 
         backgroundColor = UIColor.white
 

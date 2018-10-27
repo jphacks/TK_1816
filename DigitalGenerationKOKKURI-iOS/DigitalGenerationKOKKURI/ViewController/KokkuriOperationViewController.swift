@@ -11,11 +11,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-import SwiftOSC
+import SwiftyUserDefaults
 
 class KokkuriOperationViewController: UIViewController {
     
     lazy var disposeBag: DisposeBag = DisposeBag()
+    lazy var fieldPanDisposeBag: DisposeBag = DisposeBag()
     
     private var kokkuriOperationView: KokkuriOperationView {
         return self.view as! KokkuriOperationView
@@ -32,10 +33,7 @@ class KokkuriOperationViewController: UIViewController {
     }
     
     private func bindRx() {
-        kokkuriOperationView.fieldPan
-            .subscribe(onNext: { (point: CGPoint) in
-                KokkuriFieldOSCManager.sendPosition(point)
-            }).disposed(by: disposeBag)
+        bindFieldPan()
         
         kokkuriOperationView.toriiTap
             .subscribe(onNext: { [weak self] _ in
@@ -43,6 +41,16 @@ class KokkuriOperationViewController: UIViewController {
                 
                 let vc = SettingViewController()
                 self.present(vc, animated: true, completion: nil)
+            }).disposed(by: disposeBag)
+    }
+    
+    public func bindFieldPan() {
+        fieldPanDisposeBag = DisposeBag()
+        
+        kokkuriOperationView.fieldPan
+            .throttle(Defaults[.oscInterval], scheduler: MainScheduler.instance)
+            .subscribe(onNext: { (point: CGPoint) in
+                KokkuriFieldOSCManager.sendPosition(point)
             }).disposed(by: disposeBag)
     }
 }

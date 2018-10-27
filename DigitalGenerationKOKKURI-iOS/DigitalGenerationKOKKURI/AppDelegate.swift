@@ -13,7 +13,7 @@ import SwiftyUserDefaults
 extension DefaultsKeys {
     static let oscIp = DefaultsKey<String?>("ip")
     static let oscPort = DefaultsKey<Int>("oscPort")
-    static let oscDuration = DefaultsKey<Double>("oscDuration")
+    static let oscInterval = DefaultsKey<Double>("oscInterval")
 }
 
 @UIApplicationMain

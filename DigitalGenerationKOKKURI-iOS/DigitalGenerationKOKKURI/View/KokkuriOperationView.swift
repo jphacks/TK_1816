@@ -45,6 +45,7 @@ final class KokkuriOperationView: UIView {
         debugLabel.text = "x: 150\n y: 111"
         debugLabel.numberOfLines = 0
         debugLabel.textAlignment = .left
+        debugLabel.isHidden = true
         
         backgroundColor = UIColor.white
         
