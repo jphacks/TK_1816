@@ -28,6 +28,5 @@ final class SettingViewController: BottomPopupViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.white
     }
 }
