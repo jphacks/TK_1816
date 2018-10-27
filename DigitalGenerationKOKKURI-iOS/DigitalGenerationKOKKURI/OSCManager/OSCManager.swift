@@ -18,7 +18,7 @@ class OSCManager: NSObject {
     private let server: OSCServer
     
     private override init() {
-        client = OSCClient(address: "localhost", port: 50000)
+        client = OSCClient(address: "192.168.179.6", port: 50000)
         server = OSCServer(address: "", port: 50000)
         
         super.init()

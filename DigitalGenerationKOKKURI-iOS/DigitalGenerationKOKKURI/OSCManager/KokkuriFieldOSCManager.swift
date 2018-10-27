@@ -12,21 +12,8 @@ import SwiftOSC
 
 final class KokkuriFieldOSCManager: OSCManager {
     
-    public static func sendPosition() {
-//        let message = OSCMessage(
-//            OSCAddressPattern("/pos"),
-//            100,
-//            5.0,
-//            "Hello World",
-//            Blob(),
-//            true,
-//            false,
-//            nil,
-//            impulse,
-//            Timetag(1)
-//        )
-        
-        let mes: OSCMessage = OSCMessage(OSCAddressPattern("/pos"), "hello world")
+    public static func sendPosition(_ point: CGPoint) {
+        let mes: OSCMessage = OSCMessage(OSCAddressPattern("/pos"), Double(point.x), Double(point.y))
         OSCManager.shared.send(mes)
     }
 }
