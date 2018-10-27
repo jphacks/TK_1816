@@ -12,6 +12,7 @@
 		EA524DEA2183F85D002AAB9E /* grid.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EA524DE82183F85D002AAB9E /* grid.pdf */; };
 		EA524DED2183F874002AAB9E /* KokkuriOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA524DEC2183F874002AAB9E /* KokkuriOperationViewController.swift */; };
 		EA524DF12183F962002AAB9E /* KokkuriOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA524DEF2183F8E4002AAB9E /* KokkuriOperationView.swift */; };
+		EA524DF421840CA8002AAB9E /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA524DF321840CA8002AAB9E /* ObservableType.swift */; };
 		EA6048E72183F38F001EB50B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6048E62183F38F001EB50B /* AppDelegate.swift */; };
 		EA6048F12183F391001EB50B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6048EF2183F391001EB50B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		EA524DE82183F85D002AAB9E /* grid.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = grid.pdf; sourceTree = "<group>"; };
 		EA524DEC2183F874002AAB9E /* KokkuriOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KokkuriOperationViewController.swift; sourceTree = "<group>"; };
 		EA524DEF2183F8E4002AAB9E /* KokkuriOperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokkuriOperationView.swift; sourceTree = "<group>"; };
+		EA524DF321840CA8002AAB9E /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
 		EA6048E32183F38F001EB50B /* DigitalGenerationKOKKURI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalGenerationKOKKURI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6048E62183F38F001EB50B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6048F02183F391001EB50B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EA524DF221840C8B002AAB9E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EA524DF321840CA8002AAB9E /* ObservableType.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		EA6048DA2183F38F001EB50B = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		EA6048E52183F38F001EB50B /* DigitalGenerationKOKKURI */ = {
 			isa = PBXGroup;
 			children = (
+				EA524DF221840C8B002AAB9E /* Category */,
 				EA6048E62183F38F001EB50B /* AppDelegate.swift */,
 				EA524DEE2183F8D6002AAB9E /* View */,
 				EA524DEB2183F874002AAB9E /* ViewController */,
@@ -269,6 +280,7 @@
 			files = (
 				EA524DF12183F962002AAB9E /* KokkuriOperationView.swift in Sources */,
 				EA524DED2183F874002AAB9E /* KokkuriOperationViewController.swift in Sources */,
+				EA524DF421840CA8002AAB9E /* ObservableType.swift in Sources */,
 				EA6048E72183F38F001EB50B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

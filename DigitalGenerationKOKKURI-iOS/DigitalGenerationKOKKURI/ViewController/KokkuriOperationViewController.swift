@@ -25,4 +25,3 @@ class KokkuriOperationViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-
