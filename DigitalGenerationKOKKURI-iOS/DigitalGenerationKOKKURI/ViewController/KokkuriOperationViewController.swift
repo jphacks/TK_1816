@@ -34,7 +34,7 @@ class KokkuriOperationViewController: UIViewController {
     private func bindRx() {
         kokkuriOperationView.fieldPan
             .subscribe(onNext: { (point: CGPoint) in
-                <#code#>
+                KokkuriFieldOSCManager.sendPosition()
             }).disposed(by: disposeBag)
     }
 }
