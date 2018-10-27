@@ -33,9 +33,6 @@ final class KokkuriOperationView: UIView {
         
         super.init(frame: CGRect.zero)
         
-        toriiButton.layer.borderColor = UIColor.red.cgColor
-        toriiButton.layer.borderWidth = 1.2
-        
         debugLabel.text = "x: 150\n y: 111"
         debugLabel.numberOfLines = 0
         debugLabel.textAlignment = .left
@@ -81,9 +78,21 @@ final class KokkuriOperationView: UIView {
                 self?.debugLabelSwitchHidden()
             })
             .disposed(by: disposeBag)
+        
+        fieldImageView.rx.panGesture()
+            .subscribe(onNext: { [weak self] (recognizer) in
+                guard let `self` = self else { return }
+                
+                let tapPoint = recognizer.location(in: self.fieldImageView)
+                self.updateDebugLabel(tapPoint: tapPoint)
+            }).disposed(by: disposeBag)
     }
     
     private func debugLabelSwitchHidden() {
         debugLabel.isHidden = !debugLabel.isHidden
+    }
+    
+    private func updateDebugLabel(tapPoint: CGPoint) {
+        debugLabel.text = "x: \(tapPoint.x)\n y: \(tapPoint.y)"
     }
 }

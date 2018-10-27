@@ -14,6 +14,7 @@ target 'DigitalGenerationKOKKURI' do
   pod 'Kingfisher'
   pod 'SwiftDate'
   pod 'SwiftyUserDefaults'
+  pod 'SwiftOSC'
 
   # Rx
   pod 'RxSwift'
