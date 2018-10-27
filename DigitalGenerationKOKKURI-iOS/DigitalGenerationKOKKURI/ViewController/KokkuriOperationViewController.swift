@@ -30,6 +30,8 @@ class KokkuriOperationViewController: UIViewController {
         super.viewDidLoad()
         
         bindRx()
+        
+        KokkuriCharManager.rectOfChar()
     }
     
     private func bindRx() {
