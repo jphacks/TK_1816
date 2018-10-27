@@ -54,6 +54,14 @@ final class KokkuriOperationView: UIView {
         addSubview(toriiButton)
         addSubview(debugLabel)
         
+        KokkuriCharManager.shared.allChars.forEach { (char) in
+            let view = UIView()
+            view.frame = char.rect
+            view.layer.borderColor = UIColor.blue.cgColor
+            view.layer.borderWidth = 1
+            addSubview(view)
+        }
+        
         bindRx()
     }
     
