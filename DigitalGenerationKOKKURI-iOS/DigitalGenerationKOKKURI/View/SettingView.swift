@@ -79,6 +79,13 @@ final class SettingView: UIView {
                 return num!
             })
     }
+    
+    public var sendButtonTap: Observable<String> {
+        return sendButton.rx.tap.asObservable()
+            .map({ [weak self] _ -> String in
+                return self?.sendTextsTextField.text ?? ""
+            })
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -32,6 +32,16 @@ final class KokkuriCharManager: NSObject {
         return CGPoint.zero
     }
     
+    public static func char(_ text: String) -> KokkuriChar? {
+        for char in KokkuriCharManager.shared.allChars {
+            if char.char == text {
+                return char
+            }
+        }
+        
+        return nil
+    }
+    
     public static func charByPoint(_ point: CGPoint) -> KokkuriChar? {
         for char in KokkuriCharManager.shared.allChars {
             if char.rect.origin.x < point.x && point.x < char.rect.endPoint.x &&

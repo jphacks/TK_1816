@@ -68,5 +68,24 @@ final class SettingViewController: BottomPopupViewController {
             .subscribe(onNext: { interval in
                 Defaults[.oscCharInterval] = interval
             }).disposed(by: disposeBag)
+        
+        settingView.sendButtonTap
+            .subscribe(onNext: { [weak self] (text) in
+                self?.sendCharMessage(text)
+            }).disposed(by: disposeBag)
+    }
+    
+    private func sendCharMessage(_ text: String) {
+        if text.count < 1 {
+            return
+        }
+        
+        if let sendChar: KokkuriChar = KokkuriCharManager.char(String(text[text.startIndex])) {
+            KokkuriFieldOSCManager.sendPosition(sendChar.relativeCenterPoint)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + Defaults[.oscCharInterval]) {
+            self.sendCharMessage(String(str.suffix(str.characters.count - 1)))
+        }
     }
 }
