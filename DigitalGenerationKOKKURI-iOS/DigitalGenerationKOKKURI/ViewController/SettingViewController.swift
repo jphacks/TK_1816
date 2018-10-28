@@ -81,7 +81,7 @@ final class SettingViewController: BottomPopupViewController {
         }
         
         if let sendChar: KokkuriChar = KokkuriCharManager.char(String(text[text.startIndex])) {
-            KokkuriFieldOSCManager.sendPosition(sendChar.relativeCenterPoint)
+            KokkuriFieldOSCManager.shared.sendPosition(sendChar.relativeCenterPoint)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + Defaults[.oscCharInterval]) {

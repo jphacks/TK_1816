@@ -50,7 +50,7 @@ class KokkuriOperationViewController: UIViewController {
         kokkuriOperationView.fieldPan
             .throttle(Defaults[.oscInterval], scheduler: MainScheduler.instance)
             .subscribe(onNext: { (point: CGPoint) in
-                KokkuriFieldOSCManager.sendPosition(point)
+                KokkuriFieldOSCManager.shared.sendPosition(point)
             }).disposed(by: disposeBag)
     }
 }

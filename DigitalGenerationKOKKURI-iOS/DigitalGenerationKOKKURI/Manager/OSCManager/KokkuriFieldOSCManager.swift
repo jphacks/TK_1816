@@ -10,10 +10,24 @@ import Foundation
 
 import SwiftOSC
 
-final class KokkuriFieldOSCManager: OSCManager {
+extension KokkuriFieldOSCManager {
+    public static let shared = KokkuriFieldOSCManager()
+}
+
+final class KokkuriFieldOSCManager: NSObject {
+
+    private var beforePoint: CGPoint = CGPoint.zero
     
-    public static func sendPosition(_ point: CGPoint) {
-        let mes: OSCMessage = OSCMessage(OSCAddressPattern("/pos"), Double(point.x), Double(point.y))
+    public func sendPosition(_ point: CGPoint) {
+        let mes: OSCMessage = OSCMessage(OSCAddressPattern("/pos"),
+                                     Double(beforePoint.x - point.x),
+                                     Double(beforePoint.y - point.y))
         OSCManager.shared.send(mes)
+        
+        beforePoint = point
+    }
+    
+    private override init() {
+        super.init()
     }
 }
