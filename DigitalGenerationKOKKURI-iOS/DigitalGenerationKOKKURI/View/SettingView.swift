@@ -117,7 +117,7 @@ final class SettingView: UIView {
         intervalTextField.delegate = self
         intervalTextField.borderStyle = .roundedRect
         
-        sendTextsTextField.keyboardType = .alphabet
+//        sendTextsTextField.keyboardType = .alphabet
         sendTextsTextField.delegate = self
         sendTextsTextField.borderStyle = .roundedRect
         
@@ -229,6 +229,10 @@ final class SettingView: UIView {
     
     public func setCharInterval(_ interval: Double) {
         self.charIntervalTextField.text = interval.description
+    }
+    
+    public func setSendText(_ text: String) {
+        self.sendTextsTextField.text = text
     }
 }
 

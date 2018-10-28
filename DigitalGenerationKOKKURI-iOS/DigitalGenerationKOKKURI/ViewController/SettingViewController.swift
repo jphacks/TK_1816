@@ -85,7 +85,9 @@ final class SettingViewController: BottomPopupViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + Defaults[.oscCharInterval]) {
-            self.sendCharMessage(String(str.suffix(str.characters.count - 1)))
+            let remainTexts = String(text.suffix(text.count - 1))
+            self.settingView.setSendText(remainTexts)
+            self.sendCharMessage(remainTexts)
         }
     }
 }
